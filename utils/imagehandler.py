@@ -28,15 +28,15 @@ except ImportError:
 CHUNK_SIZE = 5000
 DEFAULT_IMAGES = {
     "pad": {
-        "hamster": "https://hamster.is/images/2025/06/21/pad.png",
+        "hamster": "https://hamsterimg.net/images/2025/06/21/pad.png",
         "imgbox": "https://images2.imgbox.com/a4/e9/jPRwPkY8_o.png",
     },
     "performer": {
-        "hamster": "https://hamster.is/images/2025/06/21/image1e1b5be84a2d086f.png",
+        "hamster": "https://hamsterimg.net/images/2025/06/21/image1e1b5be84a2d086f.png",
         "imgbox": "https://images2.imgbox.com/8d/3b/RryYOgLG_o.png",
     },
     "studio": {
-        "hamster": "https://hamster.is/images/2025/06/21/stash41c25080a3611b50.png",
+        "hamster": "https://hamsterimg.net/images/2025/06/21/stash41c25080a3611b50.png",
         "imgbox": "https://images2.imgbox.com/be/38/pohu1oLT_o.png",
     }
 }
@@ -330,7 +330,7 @@ class ImageHandler:
         if url is not None:
             logger.debug(f"Found url {url} in cache")
             # hamster image host has been phased out in favour of hamster:
-            if (host == "hamster" and "hamster.is" in url) or host != "hamster":
+            if (host == "hamster" and "hamsterimg.net" in url) or host != "hamster":
                 return url, digest
             else:
                 print(f"Skipping url {url}")
@@ -469,10 +469,10 @@ def hamster_upload(
     }
 
     if headers["X-API-Key"] == "":
-        logger.error("No API key provided for hamster.is Please go to https://hamster.is/settings/api to get one")
+        logger.error("No API key provided for hamsterimg.net Please go to https://hamsterimg.net/settings/api to get one")
         return None
 
-    url = "https://hamster.is/api/1/upload"
+    url = "https://hamsterimg.net/api/1/upload"
     response = requests.post(url, files=files, data=request_body, headers=headers)
     j = None
     try:

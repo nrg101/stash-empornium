@@ -5,9 +5,9 @@
 // version 0.33.2
 
 const TRACKERS = [
-    "www.empornium.is",
     "www.empornium.sx",
     "femdomcult.org",
+    "www.happyfappy.net",
     "www.happyfappy.org",
     "www.enthralled.me",
     "pornbay.org",
